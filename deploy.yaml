@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+martadata:
+   name: web
+   labels:
+      name: website
+spec:
+   replicas : 2
+   selector:
+      matchlabels:
+         name: website
+   template:
+     metadata:
+       labels:
+         name:website
+     spec:
+        containers:
+        - name: test
+          image: nginx
+          ports:
+          - containerPort: 80
+
+
